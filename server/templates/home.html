@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+		<script>
+			var weatherData = {{ weather_data | tojson }};
+			console.log(weatherData);
+			var gyroData = {{ gyro_data | tojson }};
+			console.log(gyroData);
+		</script>
+		<style>
+			div {
+				margin: 100px;
+			}
+		</style>
+	</head>
+
+	<h1> Baby Monitor Dashboard </h1>
+	<div> 
+		<h2 style="text-align: center"> Temperature </h2>
+		<canvas id="tempChart" width="50%"></canvas>
+	</div>
+	<div>
+		<h2 style="text-align: center"> Humidity </h2>
+		<canvas id="humidityChart" width="50%"></canvas>
+	</div>
+	<div>
+		<h2 style="text-align: center"> Accelerometer </h2>
+		<canvas id="accelChart" width="50%"></canvas>
+	</div>
+	<div>
+		<h2 style="text-align: center"> Gyroscope </h2>
+		<canvas id="gyroChart" width="50%"></canvas>
+	</div>
+	<div>
+		<h2 style="text-align: center"> Gyroscope RMS </h2>
+		<canvas id="gyroRMSChart" width="50%"></canvas>
+	</div>
+	<div>
+		<h2 style="text-align: center"> Accelerometer RMS </h2>
+		<canvas id="accelRMSChart" width="50%"></canvas>
+	</div>
+	<script src="{{url_for('static', filename='home.js')}}"></script>
+</html>
+

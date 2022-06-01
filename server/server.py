@@ -5,9 +5,10 @@ import sqlite3
 from twilio.rest import Client
 import json
 
-twilio_SID = "AC9d5ab75422480c65d5f3074c7da01db8"
-twilio_auth = "81b5a270ee5021dab4d2d03c1066f6c7"
-twilio_phone = "+19207827869"
+# for safety purposes, authentication key is taken out
+twilio_SID = ""
+twilio_auth = ""
+twilio_phone = ""
 
 app = Flask(__name__, static_folder="static")
 app.config["DEBUG"] = True
